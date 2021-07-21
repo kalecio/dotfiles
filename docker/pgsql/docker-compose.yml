@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  postgresdb:
+    image: "postgres" 
+    environment:
+      POSTGRES_USER: kalecio
+      POSTGRES_PASSWORD: kalecio
+      POSTGRES_DB: develop
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./data:/var/lib/postgresql/data/"
+      - "./config/my-postgres.conf:/etc/postgresql/postgresql.conf"
